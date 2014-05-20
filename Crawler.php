@@ -3,7 +3,7 @@ include("functions.php");
 
 $count = 0;
 $max_count = 10;
-$master = "192.241.244.165";
+$master = "107.170.38.21";
 $ipnode = ipnode();
 $connection = db_connect($master, $ipnode);
 $fqueues = array(); //Priority Queues (Front F queues - 10)
@@ -38,7 +38,7 @@ echo "Node #$node ==> IP: $ipnode\n";
 //die();
 
 while(mysqli_ping($connection) and $loop > 0 and !endjob($connection)){
-echo "1 ";
+//echo "1 ";
 //If there is a file caled seed.txt in same directory, import urls and rename file to seed.old
 seed($connection) or die("There are no urls to crawl!\n");
 
